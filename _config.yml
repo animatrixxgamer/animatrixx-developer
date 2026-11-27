@@ -4,3 +4,4 @@
 exclude:
   - positioning.md
   - README.md
+  - tools/
