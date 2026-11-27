@@ -57,7 +57,13 @@
   <section class="hero">
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="wrap hero-inner">
-      <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Available for small projects &middot; Ondo, Nigeria</p>
+      <!-- The date makes the availability claim expire out loud: if the month is behind the
+           calendar, the line is stale and needs refreshing, not quietly believed. -->
+      <p class="eyebrow">
+        <span class="dot" aria-hidden="true"></span>
+        Available for small projects &middot; Ondo, Nigeria &middot; as of
+        <time datetime="2026-11">Nov 2026</time>
+      </p>
       <h1>Building digital solutions<br><span class="grad">that work.</span></h1>
       <p class="lede">
         I build websites, web apps and automation for small businesses and schools in Nigeria.
@@ -69,7 +75,7 @@
       </div>
       <dl class="hero-stats">
         <div><dt>Live platform</dt><dd>1 school system in production</dd></div>
-        <div><dt>Repositories</dt><dd>11 public &amp; private builds</dd></div>
+        <div><dt>Public repos</dt><dd><a href="https://github.com/animatrixxgamer" target="_blank" rel="noopener">9 on GitHub</a> <span class="stat-asof">checked Nov 2026</span></dd></div>
         <div><dt>Stack</dt><dd>TypeScript &middot; Python &middot; Kotlin</dd></div>
       </dl>
     </div>
@@ -369,38 +375,67 @@
         </ul>
       </div>
 
-      <form class="card contact-form" id="contactForm" novalidate>
-        <div class="field">
-          <label for="name">Your name</label>
-          <input type="text" id="name" name="name" autocomplete="name" required placeholder="e.g. Mrs Adeyemi">
+      <div class="contact-side">
+        <div class="pre-note">
+          <h3>Before you message</h3>
+          <p>Four things worth knowing, so nothing is a surprise after you send the first message.</p>
+          <ul class="pre-list">
+            <li>
+              <strong>A deposit starts the work.</strong>
+              <span>Anything bigger than a one-page site starts with a 50% deposit and the balance is
+              paid on delivery. Scope, price and dates are written down before any money moves.</span>
+            </li>
+            <li>
+              <strong>You click a preview before launch.</strong>
+              <span>You get a working link you can open and test, and the balance is only due after
+              that &mdash; not before.</span>
+            </li>
+            <li>
+              <strong>Payments are guardian-supervised.</strong>
+              <span>I'm under 18, so payments go through my guardian. The account details come
+              inside the written quote, not in a hurry afterwards.</span>
+            </li>
+            <li>
+              <strong>If a link breaks later, message me.</strong>
+              <span>I don't disappear after handover: broken links and forms on anything I built
+              get fixed.</span>
+            </li>
+          </ul>
         </div>
-        <div class="field">
-          <label for="business">Business or school <span class="opt">(optional)</span></label>
-          <input type="text" id="business" name="business" autocomplete="organization" placeholder="e.g. Bright Steps Academy">
-        </div>
-        <div class="field">
-          <label for="need">What do you need?</label>
-          <select id="need" name="need" required>
-            <option value="">Choose one</option>
-            <option>One-page website</option>
-            <option>Small business website</option>
-            <option>Python automation script</option>
-            <option>Website maintenance</option>
-            <option>Something else</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="message">A little detail</label>
-          <textarea id="message" name="message" rows="4" required placeholder="What should it do? Any deadline?"></textarea>
-        </div>
-        <button class="btn btn-primary btn-block" type="submit" aria-describedby="formHint">Send on WhatsApp</button>
-        <p class="form-hint" id="formHint" role="status" aria-live="polite">This opens WhatsApp with your message ready to send. Nothing is stored on this site.</p>
-        <noscript>
-          <p class="form-hint">This form needs JavaScript to open WhatsApp. Message me directly instead:
-          <a href="https://wa.me/2347045257764">+234 704 525 7764</a> or
-          <a href="mailto:animatrixxgamer@gmail.com">animatrixxgamer@gmail.com</a>.</p>
-        </noscript>
-      </form>
+
+        <form class="card contact-form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required placeholder="e.g. Mrs Adeyemi">
+          </div>
+          <div class="field">
+            <label for="business">Business or school <span class="opt">(optional)</span></label>
+            <input type="text" id="business" name="business" autocomplete="organization" placeholder="e.g. Bright Steps Academy">
+          </div>
+          <div class="field">
+            <label for="need">What do you need?</label>
+            <select id="need" name="need" required>
+              <option value="">Choose one</option>
+              <option>One-page website</option>
+              <option>Small business website</option>
+              <option>Python automation script</option>
+              <option>Website maintenance</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">A little detail</label>
+            <textarea id="message" name="message" rows="4" required placeholder="What should it do? Any deadline?"></textarea>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit" aria-describedby="formHint">Send on WhatsApp</button>
+          <p class="form-hint" id="formHint" role="status" aria-live="polite">This opens WhatsApp with your message ready to send. Nothing is stored on this site.</p>
+          <noscript>
+            <p class="form-hint">This form needs JavaScript to open WhatsApp. Message me directly instead:
+            <a href="https://wa.me/2347045257764">+234 704 525 7764</a> or
+            <a href="mailto:animatrixxgamer@gmail.com">animatrixxgamer@gmail.com</a>.</p>
+          </noscript>
+        </form>
+      </div>
     </div>
   </section>
 

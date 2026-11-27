@@ -339,8 +339,9 @@ img { max-width: 100%; display: block; }
 
 .eyebrow {
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 9px;
+  gap: 4px 9px;
   font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -410,6 +411,15 @@ img { max-width: 100%; display: block; }
   font-size: 14.5px;
   color: #dbe3f2;
 }
+.hero-stats dd a {
+  color: #dbe3f2;
+  text-decoration: underline;
+  text-decoration-color: rgba(34, 211, 238, 0.45);
+  text-underline-offset: 3px;
+}
+.hero-stats dd a:hover { color: var(--cyan); }
+/* The check date on a claim; kept unbroken so it reads as one stamp. */
+.stat-asof { color: var(--muted); font-size: 12.5px; white-space: nowrap; }
 
 /* ===== Tech strip ===== */
 
@@ -814,6 +824,42 @@ img { max-width: 100%; display: block; }
 .scope-note h3 { font-size: 1rem; margin-bottom: 8px; }
 .scope-note p { color: #94a3b8; font-size: 14px; }
 
+/* "Before you message": sits directly above the contact form. */
+.pre-note {
+  padding: 24px;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+  background: rgba(10, 18, 34, 0.5);
+}
+.pre-note h3 { font-size: 0.98rem; margin-bottom: 6px; }
+.pre-note > p { color: #94a3b8; font-size: 13.5px; margin-bottom: 16px; }
+.pre-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+.pre-list li {
+  position: relative;
+  padding-left: 15px;
+  display: grid;
+  gap: 3px;
+}
+.pre-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--cyan);
+  opacity: 0.7;
+}
+.pre-list strong { color: var(--text); font-size: 14px; font-weight: 600; }
+.pre-list span { color: #94a3b8; font-size: 13.5px; line-height: 1.55; }
+
 /* ===== Contact ===== */
 
 .section-contact {
@@ -824,6 +870,7 @@ img { max-width: 100%; display: block; }
 }
 
 .contact-grid { display: grid; gap: 34px; }
+.contact-side { display: grid; gap: 20px; align-content: start; }
 .lede-sm { color: #b6c2d6; font-size: 15.5px; max-width: 52ch; margin-top: 16px; }
 
 .contact-list {

@@ -38,6 +38,10 @@ python3 -m http.server 3000
   source of truth for tone and claims.
 - **Colours and spacing** are CSS custom properties at the top of `styles.css`; changing them there
   updates the whole page.
+- **Two hero claims carry a check date.** The availability line and the public-repo count both
+  show the month they were last checked, and the count links to your GitHub profile. Refresh the
+  month — and re-count at <https://github.com/animatrixxgamer> — whenever you touch the hero: a
+  month in the past is the signal that the claim needs re-checking, so it can't go stale silently.
 - **The WhatsApp number** is set once, in `main.js` (`WHATSAPP`, digits only including country code).
   The `wa.me` links in `index.html` need the same number.
 - **The social card** (`og-image.png`) is referenced host-relative (`/og-image.png`), so it resolves
