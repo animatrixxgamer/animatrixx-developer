@@ -8,6 +8,9 @@
   --line-strong: rgba(148, 163, 184, 0.26);
   --text: #e8edf8;
   --muted: #94a3b8;
+  /* Small text (11–13px) and placeholders: 6.8:1 on --bg, 6.5:1 on the tech strip, 6.9:1 on the footer.
+     --muted drops to 4.0:1 at these sizes, which fails WCAG AA. */
+  --muted-2: #8b98ad;
   --purple: #8b5cf6;
   --purple-soft: rgba(139, 92, 246, 0.16);
   --cyan: #22d3ee;
@@ -237,7 +240,8 @@ img { max-width: 100%; display: block; }
 .btn:active { transform: translateY(0); }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--purple), #6366f1 55%, var(--cyan));
+  /* navy #05101c on the old #6366f1 midpoint was 4.28:1; these stops keep the gradient at 4.5:1 or better */
+  background: linear-gradient(135deg, #a78bfa, var(--purple) 50%, var(--cyan));
   color: #05101c;
   box-shadow: 0 10px 30px -12px rgba(139, 92, 246, 0.7);
 }
@@ -377,7 +381,7 @@ img { max-width: 100%; display: block; }
   font-size: 12.5px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #64748b;
+  color: var(--muted-2);
   font-weight: 600;
 }
 
@@ -396,10 +400,9 @@ img { max-width: 100%; display: block; }
 .section h2 { font-size: clamp(1.6rem, 4.4vw, 2.35rem); }
 .section-note { color: var(--muted); font-size: 14.5px; max-width: 44ch; }
 
-.two-col {
-  display: grid;
-  gap: 34px;
-}
+.two-col { display: grid; gap: 34px; }
+
+.two-col h2 { margin-bottom: 16px; }
 
 .two-col p { color: #b6c2d6; max-width: 62ch; }
 
@@ -668,10 +671,18 @@ img { max-width: 100%; display: block; }
 .project-link {
   display: inline-flex;
   align-items: center;
-  margin-top: 16px;
+  min-height: 28px;
+  padding-block: 3px;
+  margin-top: 13px;
   font-size: 13.5px;
   font-weight: 600;
   color: var(--cyan);
+}
+
+.more-note a {
+  display: inline-block;
+  min-height: 24px;
+  padding-block: 4px;
 }
 
 .more-note {
@@ -803,7 +814,7 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
   color: #a9b6ca;
 }
-.opt { color: #64748b; text-transform: none; letter-spacing: 0; font-weight: 500; }
+.opt { color: var(--muted-2); text-transform: none; letter-spacing: 0; font-weight: 500; }
 
 .field input,
 .field select,
@@ -832,7 +843,7 @@ img { max-width: 100%; display: block; }
 }
 
 .field input::placeholder,
-.field textarea::placeholder { color: #526075; }
+.field textarea::placeholder { color: var(--muted-2); }
 
 .field input:focus,
 .field select:focus,
@@ -846,7 +857,8 @@ img { max-width: 100%; display: block; }
 .field textarea:user-invalid,
 .field select:user-invalid { border-color: #f87171; }
 
-.form-hint { font-size: 12.5px; color: #64748b; text-align: center; }
+.form-hint { font-size: 12.5px; color: var(--muted-2); text-align: center; }
+.form-hint a { color: var(--cyan); }
 .form-hint.is-error { color: #fca5a5; }
 
 /* ===== Footer ===== */
@@ -860,17 +872,18 @@ img { max-width: 100%; display: block; }
 .brand-footer .brand-text { font-size: 14px; }
 
 .footer-line { color: #94a3b8; font-size: 14px; }
-.footer-meta { color: #526075; font-size: 12.5px; }
-.footer-meta a { color: #94a3b8; }
+.footer-meta { color: var(--muted-2); font-size: 12.5px; }
+.footer-meta a { display: inline-block; min-height: 24px; padding-block: 4px; color: #a9b6ca; }
 
 /* ===== Reveal animation ===== */
 
-.reveal {
+/* Scoped to html.js so the cards stay visible when the script never runs. */
+.js .reveal {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
 }
-.reveal.is-visible { opacity: 1; transform: none; }
+.js .reveal.is-visible { opacity: 1; transform: none; }
 
 /* ===== Responsive ===== */
 
@@ -971,5 +984,5 @@ img { max-width: 100%; display: block; }
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
-  .reveal { opacity: 1; transform: none; }
+  .js .reveal { opacity: 1; transform: none; }
 }

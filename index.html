@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Animatrixx Developer — Websites, Web Apps &amp; Automation</title>
-<meta name="description" content="Animatrixx Developer builds websites, web apps and Python automation for small businesses and schools in Nigeria. Real projects, honest pricing, clear scope.">
+<meta name="description" content="Solo developer in Ondo, Nigeria building websites, web apps and Python automation for small businesses and schools. Scoped in writing, previewed before launch.">
 <meta name="theme-color" content="#060b16">
 <meta property="og:title" content="Animatrixx Developer — Building digital solutions that work">
-<meta property="og:description" content="Websites, web apps and Python automation. Built by a student developer in Ondo, Nigeria.">
+<meta property="og:description" content="A one-person studio with agency standards: written scope, a fixed price, and a preview before launch. Websites, web apps and automation.">
 <meta property="og:type" content="website">
+<script>document.documentElement.classList.add("js");</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -48,8 +49,8 @@
       <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Available for small projects &middot; Ondo, Nigeria</p>
       <h1>Building digital solutions<br><span class="grad">that work.</span></h1>
       <p class="lede">
-        I build websites, web apps and Python automation for small businesses and schools.
-        Everything on this page is real work with a repository or a live link &mdash; no mock-ups pretending to be products.
+        I build websites, web apps and automation for small businesses and schools in Nigeria.
+        Every project I show is real, with a live link or a repository behind it.
       </p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#work">See my work</a>
@@ -74,12 +75,18 @@
     <div class="wrap two-col">
       <div>
         <p class="eyebrow">About</p>
-        <h2>A one-person studio that ships.</h2>
+        <h2>A one-person studio that works like a small agency.</h2>
         <p>
-          Animatrixx Developer is me: a student developer in Ondo State, Nigeria, building software for
-          small businesses, schools and independent professionals. I started with Telegram bots and
-          automation, then moved into full web applications &mdash; and that path is why I care as much
-          about what happens when something fails as about how a page looks.
+          Animatrixx Developer is me &mdash; a student developer in Ondo State. I work solo, which means
+          you talk to the person writing the code: written scope and a fixed price before any work
+          starts, a preview you can click before anything goes live, and a straight answer when
+          something isn't ready yet.
+        </p>
+        <p>
+          I started with Python automation and messaging bots, then moved into full web applications.
+          That path shaped how I work: I care what happens when a form fails, when a payment arrives
+          twice, or when a page opens on a slow phone in Ondo &mdash; not only how the homepage looks on
+          a big screen.
         </p>
         <p>
           The school platform below isn't a portfolio exercise. It handles admissions, fees and report
@@ -375,8 +382,13 @@
           <label for="message">A little detail</label>
           <textarea id="message" name="message" rows="4" required placeholder="What should it do? Any deadline?"></textarea>
         </div>
-        <button class="btn btn-primary btn-block" type="submit">Send on WhatsApp</button>
-        <p class="form-hint" id="formHint">This opens WhatsApp with your message ready to send. Nothing is stored on this site.</p>
+        <button class="btn btn-primary btn-block" type="submit" aria-describedby="formHint">Send on WhatsApp</button>
+        <p class="form-hint" id="formHint" role="status" aria-live="polite">This opens WhatsApp with your message ready to send. Nothing is stored on this site.</p>
+        <noscript>
+          <p class="form-hint">This form needs JavaScript to open WhatsApp. Message me directly instead:
+          <a href="https://wa.me/2347045257764">+234 704 525 7764</a> or
+          <a href="mailto:animatrixxgamer@gmail.com">animatrixxgamer@gmail.com</a>.</p>
+        </noscript>
       </form>
     </div>
   </section>
