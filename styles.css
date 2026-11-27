@@ -25,6 +25,8 @@
    Arimo and Liberation Sans carry Arial's advance widths, so these percentages
    are measured, not eyeballed: size-adjust matches the average advance of
    U+0020–U+007E, the ascent/descent overrides match each font's hhea metrics.
+   Inter is matched at 400 (body copy) and Space Grotesk at 600 against Arial
+   Bold, because a 600 request resolves to the bold fallback face.
    Result: swapping fallback → webfont moves nothing on the page. */
 @font-face {
   font-family: "Inter Fallback";
@@ -38,9 +40,9 @@
 @font-face {
   font-family: "Space Grotesk Fallback";
   src: local("Arial"), local("Arimo"), local("Liberation Sans");
-  size-adjust: 103.14%;
-  ascent-override: 95.41%;
-  descent-override: 28.31%;
+  size-adjust: 100.17%;
+  ascent-override: 98.23%;
+  descent-override: 29.15%;
   line-gap-override: 0%;
 }
 
