@@ -1,2 +1,5 @@
 # Local audit screenshots and image captures. Regenerable; not part of the site.
 audit/
+
+# Private positioning notes. Kept on disk as the copy source, never published.
+positioning.md
