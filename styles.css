@@ -1,5 +1,49 @@
 /* ===== Animatrixx Developer — portfolio ===== */
 
+/* ===== Fonts (self-hosted) =====
+   Latin-subset variable files pulled from Google Fonts, both SIL OFL 1.1:
+   Inter 100–900 (48 KB) and Space Grotesk 300–700 (22 KB). Self-hosting means no
+   googleapis stylesheet and no gstatic requests, so the page talks to one origin. */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("fonts/inter-latin-var.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("fonts/space-grotesk-latin-var.woff2") format("woff2");
+}
+
+/* Metric-matched fallbacks, used only while a webfont is still downloading.
+   Arimo and Liberation Sans carry Arial's advance widths, so these percentages
+   are measured, not eyeballed: size-adjust matches the average advance of
+   U+0020–U+007E, the ascent/descent overrides match each font's hhea metrics.
+   Result: swapping fallback → webfont moves nothing on the page. */
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial"), local("Arimo"), local("Liberation Sans");
+  size-adjust: 106.58%;
+  ascent-override: 90.89%;
+  descent-override: 22.63%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Space Grotesk Fallback";
+  src: local("Arial"), local("Arimo"), local("Liberation Sans");
+  size-adjust: 103.14%;
+  ascent-override: 95.41%;
+  descent-override: 28.31%;
+  line-gap-override: 0%;
+}
+
 :root {
   --bg: #060b16;
   --bg-soft: #0a1222;
@@ -36,7 +80,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: Inter, "Inter Fallback", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 16.5px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -44,7 +88,7 @@ body {
 }
 
 h1, h2, h3, .brand-text, .price, .mini-h {
-  font-family: "Space Grotesk", Inter, sans-serif;
+  font-family: "Space Grotesk", "Space Grotesk Fallback", Inter, sans-serif;
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.15;
@@ -153,7 +197,7 @@ img { max-width: 100%; display: block; }
   text-transform: uppercase;
   color: var(--muted);
   font-weight: 500;
-  font-family: Inter, sans-serif;
+  font-family: Inter, "Inter Fallback", sans-serif;
 }
 
 .nav-toggle {
@@ -718,7 +762,7 @@ img { max-width: 100%; display: block; }
   color: transparent;
 }
 .price span {
-  font-family: Inter, sans-serif;
+  font-family: Inter, "Inter Fallback", sans-serif;
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;

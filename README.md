@@ -25,10 +25,11 @@ python3 -m http.server 3000
 | `index.html` | The whole page: hero, about, work, services, contact form. All copy lives here. |
 | `styles.css` | All styles. Design tokens (colours, spacing, radii) are at the top of the file. |
 | `main.js` | Mobile nav, scroll reveals, active nav link, the WhatsApp contact form, footer year. |
+| `fonts/` | Self-hosted latin-subset variable fonts: Inter (100–900) and Space Grotesk (300–700). |
 | `og-image.png` | 1200×630 social preview card, shown when a link is shared. |
 | `_config.yml` | GitHub Pages (Jekyll) config; excludes the repo notes from the published site. |
 | `.vercelignore` | Keeps the repo notes out of Vercel deployments. |
-| `positioning.md` | Internal positioning and client-message notes. Not part of the site. |
+| `positioning.md` | Internal positioning and client-message notes. Gitignored, local only, not part of the site. |
 | `tools/downscale.py` | Stdlib-only PNG downscaler. Regenerates `og-image.png` from a 2× screenshot. |
 
 ## Editing
@@ -41,6 +42,10 @@ python3 -m http.server 3000
   The `wa.me` links in `index.html` need the same number.
 - **The social card** (`og-image.png`) is referenced host-relative (`/og-image.png`), so it resolves
   from whatever domain serves the page. Replace the file, keep the 1200×630 size.
+- **Fonts** are the files in `fonts/`, declared with `@font-face` at the top of `styles.css` — nothing
+  is fetched from Google at runtime. If you swap a font file, re-measure the fallback overrides in
+  that block: `size-adjust` and the ascent/descent overrides are matched to the real font metrics so
+  the fallback swap does not shift layout.
 
 ## Deployment
 
@@ -53,8 +58,9 @@ lines together so search engines and shared links agree.
 
 ## Notes
 
-`positioning.md` is working notes, not site content. It is excluded from both the Pages build and
-Vercel deployments, but the repository is public, so it is still readable on GitHub.
+`positioning.md` is working notes, not site content. It is gitignored and exists only in local
+checkouts, so it is never published and no longer readable on GitHub (older commits still contain
+it). The Pages build and `.vercelignore` also exclude it as a second line of defence.
 
 `audit/` holds local audit screenshots and image captures. It is gitignored — the files are
 regenerable and never belong in the repository.
