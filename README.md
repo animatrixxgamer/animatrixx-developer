@@ -23,6 +23,7 @@ python3 -m http.server 3000
 | File | What it is |
 |---|---|
 | `index.html` | The whole page: hero, about, work, services, contact form. All copy lives here. |
+| `temidire.html` | Case study for the Temidire International College platform, linked from the featured project card. |
 | `styles.css` | All styles. Design tokens (colours, spacing, radii) are at the top of the file. |
 | `main.js` | Mobile nav, scroll reveals, active nav link, the WhatsApp contact form, footer year. |
 | `fonts/` | Self-hosted latin-subset variable fonts: Inter (100–900) and Space Grotesk (300–700). |

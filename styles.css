@@ -973,6 +973,161 @@ img { max-width: 100%; display: block; }
 .footer-meta { color: var(--muted-2); font-size: 12.5px; }
 .footer-meta a { display: inline-block; min-height: 24px; padding-block: 4px; color: #a9b6ca; }
 
+/* ===== Case study page ===== */
+
+.cs-hero {
+  position: relative;
+  padding: 44px 0 40px;
+  overflow: hidden;
+}
+.cs-hero .wrap { position: relative; z-index: 1; }
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 26px;
+  font-size: 12.5px;
+  color: var(--muted-2);
+}
+.crumbs a { color: var(--muted); }
+.crumbs a:hover { color: var(--cyan); }
+.crumbs [aria-current="page"] { color: #b6c2d6; }
+
+.cs-hero h1 {
+  font-size: clamp(1.95rem, 5.6vw, 2.9rem);
+  max-width: 24ch;
+  margin-bottom: 18px;
+}
+
+.cs-lede {
+  max-width: 60ch;
+  color: #b6c2d6;
+  font-size: 1.04rem;
+}
+
+/* Same reading as the hero stats, but four items: two across on a phone, four on wide screens. */
+.cs-facts {
+  margin-top: 30px;
+  gap: 16px 22px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.cs-facts dd { font-size: 14px; }
+
+/* Prose column: keeps long lines readable on a wide screen. */
+.cs-flow { max-width: 72ch; }
+.cs-flow h2 { margin-bottom: 16px; }
+.cs-flow p { color: #b6c2d6; }
+.cs-flow > p:last-child { margin-bottom: 0; }
+
+.cs-grid { display: grid; gap: 18px; }
+.cs-card h3 { font-size: 1.12rem; margin-bottom: 0; }
+.cs-tag {
+  font-size: 10.5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--cyan);
+  margin-bottom: 8px;
+}
+.cs-card .cs-list { margin: 18px 0 0; max-width: none; }
+.cs-card .cs-list li { font-size: 14px; padding-left: 24px; }
+.cs-card code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 12.5px;
+  background: rgba(148, 163, 184, 0.12);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.cs-long { max-width: none; margin-top: 22px; }
+.cs-long li { font-size: 15px; }
+
+/* Numbered safeguards: the sequence matters, so the numbers are real counters. */
+.cs-steps {
+  list-style: none;
+  counter-reset: step;
+  margin: 26px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 18px;
+}
+.cs-steps li {
+  position: relative;
+  counter-increment: step;
+  padding-left: 44px;
+  display: grid;
+  gap: 4px;
+}
+.cs-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: -1px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  border: 1px solid rgba(139, 92, 246, 0.32);
+  background: var(--purple-soft);
+  color: #c4b5fd;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+.cs-steps strong { color: var(--text); font-size: 15px; font-weight: 600; }
+.cs-steps span { color: #94a3b8; font-size: 14.5px; line-height: 1.6; }
+
+.cs-note {
+  margin-top: 26px;
+  padding: 22px 24px;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+  background: rgba(10, 18, 34, 0.5);
+  color: #94a3b8;
+  font-size: 14.5px;
+}
+.cs-note strong { color: var(--text); }
+
+.cs-plain {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.cs-plain li {
+  position: relative;
+  padding-left: 20px;
+  color: #94a3b8;
+  font-size: 14.5px;
+}
+.cs-plain li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.72em;
+  width: 8px;
+  height: 1.5px;
+  background: var(--muted);
+}
+
+.cs-cta {
+  display: grid;
+  gap: 24px;
+  padding: 30px;
+  border: 1px solid var(--line-strong);
+  border-radius: calc(var(--radius) + 6px);
+  background:
+    radial-gradient(120% 130% at 0% 0%, rgba(139, 92, 246, 0.16), transparent 55%),
+    linear-gradient(180deg, #101a2e, #0a1222);
+}
+.cs-cta h2 { font-size: clamp(1.4rem, 3.6vw, 1.9rem); margin-bottom: 12px; }
+.cs-cta-text { color: #c3cee0; font-size: 15px; max-width: 52ch; }
+.cs-cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
 /* ===== Reveal animation ===== */
 
 /* Scoped to html.js so the cards stay visible when the script never runs. */
@@ -1064,6 +1219,12 @@ img { max-width: 100%; display: block; }
   .service-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
 
   .contact-grid { grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+
+  .cs-hero { padding: 58px 0 46px; }
+  .cs-facts { grid-template-columns: repeat(4, 1fr); }
+  .cs-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .cs-cta { grid-template-columns: 1.3fr 1fr; align-items: center; gap: 32px; padding: 38px; }
+  .cs-cta-actions { justify-content: flex-end; }
 }
 
 @media (min-width: 1040px) {

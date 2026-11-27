@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temidire International College — case study | Animatrixx Developer</title>
+<meta name="description" content="Case study: the website and school management platform built for Temidire International College in Ondo Town — admissions, fees with Paystack, attendance, report cards, and a parent portal.">
+<meta name="theme-color" content="#060b16">
+<meta property="og:title" content="Temidire International College — case study">
+<meta property="og:description" content="One school, one system: a public website, a staff dashboard for fees, attendance and results, and a portal where parents see their own child's record.">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://animatrixxgamer.github.io/animatrixx-developer/temidire.html">
+<meta property="og:url" content="https://animatrixxgamer.github.io/animatrixx-developer/temidire.html">
+<!-- Host-relative for the same reason as the homepage: a crawler resolves it against the origin
+     that served the page, so a Vercel or custom-domain link gets its own thumbnail. -->
+<meta property="og:image" content="/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Animatrixx Developer: Building digital solutions that work.">
+<meta name="twitter:card" content="summary_large_image">
+<script>document.documentElement.classList.add("js");</script>
+<link rel="preload" href="fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/space-grotesk-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23060b16'/%3E%3Ctext x='50' y='68' font-family='sans-serif' font-size='52' font-weight='700' text-anchor='middle' fill='%2322d3ee'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Animatrixx Developer, home">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <span class="brand-text">Animatrixx<em>Developer</em></span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+      <span class="sr-only">Menu</span>
+    </button>
+
+    <nav class="site-nav" id="siteNav" aria-label="Main">
+      <a href="index.html#about">About</a>
+      <a href="index.html#work" class="is-active">Work</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="btn btn-sm btn-primary" href="https://wa.me/2347045257764" target="_blank" rel="noopener">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="cs-hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="index.html#work">Work</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Temidire International College</span>
+      </nav>
+
+      <p class="badge-row">
+        <span class="pill pill-live">Live</span>
+        <span class="pill">Case study &middot; School platform</span>
+      </p>
+
+      <h1>A school website and the software behind it, in one system.</h1>
+      <p class="cs-lede">
+        Temidire International College in Ondo Town needed two things that usually become two
+        projects: a public website parents can read, and the management software the office runs on
+        every day. They share one database, one login and one deployment.
+      </p>
+
+      <dl class="hero-stats cs-facts">
+        <div>
+          <dt>Role</dt>
+          <dd>Sole developer &mdash; design, build, deploy</dd>
+        </div>
+        <div>
+          <dt>Status</dt>
+          <dd>Live &middot; deployed for one school</dd>
+        </div>
+        <div>
+          <dt>Stack</dt>
+          <dd>Next.js 15 &middot; TypeScript &middot; Prisma &middot; Postgres</dd>
+        </div>
+        <div>
+          <dt>Payments</dt>
+          <dd>Paystack, credited by signed webhook</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap cs-flow">
+      <p class="eyebrow">The brief</p>
+      <h2>Four problems a school office already has.</h2>
+      <p>
+        A school does not need a website and a management system as separate purchases. It needs the
+        admissions form to end up in the same place as the pupil's invoice, the register to feed the
+        same term the report card prints, and a parent to be able to check a balance without calling
+        the office at break time.
+      </p>
+      <p>
+        So the work was scoped as one system, with three audiences inside it: the public, the staff,
+        and the student or parent. Everything below is what that system actually does today, plus a
+        plain list of what it doesn't.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">What it does</p>
+          <h2>Three sides of the same school.</h2>
+        </div>
+        <p class="section-note">Grouped by who signs in, because that is how the software is organised.</p>
+      </div>
+
+      <div class="cs-grid">
+        <article class="card cs-card reveal">
+          <p class="cs-tag">Everyone &middot; no login</p>
+          <h3>The public website</h3>
+          <ul class="check-list cs-list">
+            <li>School pages for about, academics, school life, transport, news, gallery and contact</li>
+            <li>A four-step admissions application that writes straight into the staff pipeline</li>
+            <li>A staff directory and leadership page filled from the database, not a static list</li>
+            <li>News, events and announcements published once and shown on the public site</li>
+          </ul>
+        </article>
+
+        <article class="card cs-card reveal">
+          <p class="cs-tag">Staff &middot; role-based login</p>
+          <h3>The admin dashboard</h3>
+          <ul class="check-list cs-list">
+            <li>Applications, the student roll, class moves and taking a pupil off the roll</li>
+            <li>Invoices for the current session and term, manual payments, billed and collected totals</li>
+            <li>Attendance registers, CA and exam scores, and term-scoped report cards</li>
+            <li>A real timetable editor, the contact-form inbox, and owner-only users, roles and audit log</li>
+          </ul>
+        </article>
+
+        <article class="card cs-card reveal">
+          <p class="cs-tag">Student &amp; parent &middot; own record only</p>
+          <h3>The portal</h3>
+          <ul class="check-list cs-list">
+            <li>Results for the term, with the fee balance on the same screen</li>
+            <li>Pay an outstanding invoice from the portal, or let the bursary record cash or transfer</li>
+            <li>Timetable, homework and school notices</li>
+            <li>No route from the portal into <code>/admin</code>, for any account</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap cs-flow">
+      <p class="eyebrow">The hard part</p>
+      <h2>A fee must be recorded once, or not at all.</h2>
+      <p>
+        The one thing there was no room to get wrong was money. A parent double-clicking <em>Pay</em>
+        must not be charged twice, a webhook arriving twice must not credit twice, and a payment that
+        Paystack confirms late must not vanish. That constraint shaped the whole payment flow:
+      </p>
+
+      <ol class="cs-steps">
+        <li>
+          <strong>One live checkout per invoice.</strong>
+          <span>Pressing Pay again returns the same checkout link for 30 minutes instead of opening a
+          second live payment, so a double-click cannot charge the fee twice.</span>
+        </li>
+        <li>
+          <strong>The invoice is marked paid by a signed webhook.</strong>
+          <span>Paystack posts to the app with a request signed by the secret key, and nothing is
+          credited until that signature checks out.</span>
+        </li>
+        <li>
+          <strong>The return trip asks Paystack directly.</strong>
+          <span>When the parent comes back, the portal queries that payment reference itself. If the
+          webhook was delayed by a restart or a redeploy, the balance still updates.</span>
+        </li>
+        <li>
+          <strong>Retries are idempotent.</strong>
+          <span>Duplicate webhooks and the return check both run, and only the first one moves the
+          balance.</span>
+        </li>
+        <li>
+          <strong>A late payment still counts.</strong>
+          <span>A checkout that timed out and was marked failed is credited if Paystack later confirms
+          the money arrived.</span>
+        </li>
+        <li>
+          <strong>An overpayment is visible, not swallowed.</strong>
+          <span>Overpaying an invoice is rejected on the server; anything accidental is added in full
+          and written to the audit log so the bursar can refund or carry it forward.</span>
+        </li>
+      </ol>
+
+      <p class="cs-note">
+        <strong>What this is not:</strong> a security review. The flow above is careful about
+        duplicate and missing events, which is the failure a school actually meets. It has not been
+        audited by anyone else, and I don't describe it as production-hardened beyond what it does.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap cs-flow">
+      <p class="eyebrow">The boring parts</p>
+      <h2>The checks that don't show on a screenshot.</h2>
+      <p>
+        Most of the work in a system like this is invisible from the front page, and it is where the
+        honest difference between a demo and something a bursar can use sits.
+      </p>
+      <ul class="check-list cs-list cs-long">
+        <li>
+          Every write goes through a server-side role check. Hiding a button is not the protection.
+          Directory edits are limited to the owner, administrators, principal and vice principals;
+          invoices and payments to the owner, administrators and bursar.
+        </li>
+        <li>
+          A disabled account, or a pupil taken off the roll, loses access on the next request &mdash;
+          even if that person still holds an old session cookie.
+        </li>
+        <li>
+          The owner can download one JSON file holding every account, pupil, result, invoice and
+          payment, and restore it inside a single database transaction: a damaged file is rejected and
+          the current data is left untouched.
+        </li>
+        <li>
+          Backups are manual on purpose. The app hands over the file; it does not pretend to run
+          unattended backups for the school.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap cs-flow">
+      <p class="eyebrow">Limits</p>
+      <h2>What it doesn't do.</h2>
+      <p>
+        The project is live, but it is one school's system, built by one developer. These are the
+        limits I would tell the next school before they compare it to an off-the-shelf package:
+      </p>
+      <ul class="cs-plain">
+        <li>It is not multi-tenant. One deployment serves one school; a second school would need its own install and its own database.</li>
+        <li>Online payments need the school's own Paystack keys. With no keys set, the pay button is hidden and the bursary records payments by hand.</li>
+        <li>Backups are a button the owner presses, not a schedule. Whoever runs the school has to actually press it.</li>
+        <li>The demo accounts created on first setup must be given real passwords, or removed, before staff use it.</li>
+        <li>I'm a solo developer and this is the largest thing I've built. It has not had a professional security review, and for banking-grade requirements I'm not the right person.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cs-cta">
+        <div>
+          <p class="eyebrow">See it yourself</p>
+          <h2>Read the pages, or open the code.</h2>
+          <p class="cs-cta-text">
+            The public site is live. The repository has the schema, the payment flow and the
+            deployment notes, including the parts described above.
+          </p>
+        </div>
+        <div class="cs-cta-actions">
+          <a class="btn btn-primary" href="https://temidire-international-college.vercel.app" target="_blank" rel="noopener">Open the live site</a>
+          <a class="btn btn-ghost" href="https://github.com/animatrixxgamer/temidire-international-college" target="_blank" rel="noopener">Source code</a>
+          <a class="btn btn-ghost" href="index.html#work">Back to all work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="brand brand-footer">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <span class="brand-text">Animatrixx<em>Developer</em></span>
+    </div>
+    <p class="footer-line">Building digital solutions that work. Ondo State, Nigeria.</p>
+    <p class="footer-meta">&copy; <span id="year">2026</span> Animatrixx Developer &middot; <a href="#top">Back to top</a></p>
+  </div>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
