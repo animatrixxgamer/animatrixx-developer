@@ -1,4 +1,6 @@
 # GitHub Pages builds this repo with Jekyll, which turns every Markdown file at the root
-# into a public page. positioning.md is internal copy notes, so keep it out of the build.
+# into a public page. These files are repository notes, not site pages, so keep them out
+# of the build.
 exclude:
   - positioning.md
+  - README.md
