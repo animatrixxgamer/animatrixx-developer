@@ -29,6 +29,7 @@ python3 -m http.server 3000
 | `_config.yml` | GitHub Pages (Jekyll) config; excludes the repo notes from the published site. |
 | `.vercelignore` | Keeps the repo notes out of Vercel deployments. |
 | `positioning.md` | Internal positioning and client-message notes. Not part of the site. |
+| `tools/downscale.py` | Stdlib-only PNG downscaler. Regenerates `og-image.png` from a 2× screenshot. |
 
 ## Editing
 
@@ -54,3 +55,6 @@ lines together so search engines and shared links agree.
 
 `positioning.md` is working notes, not site content. It is excluded from both the Pages build and
 Vercel deployments, but the repository is public, so it is still readable on GitHub.
+
+`audit/` holds local audit screenshots and image captures. It is gitignored — the files are
+regenerable and never belong in the repository.
