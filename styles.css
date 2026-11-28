@@ -1037,7 +1037,8 @@ img { max-width: 100%; display: block; }
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
   font-size: 12.5px;
   background: rgba(148, 163, 184, 0.12);
-  padding: 1px 5px;
+  /* tighter right side so punctuation sits close to the chip */
+  padding: 1px 3px 1px 5px;
   border-radius: 4px;
 }
 
@@ -1223,6 +1224,10 @@ img { max-width: 100%; display: block; }
   .cs-hero { padding: 58px 0 46px; }
   .cs-facts { grid-template-columns: repeat(4, 1fr); }
   .cs-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  /* Two lines of the label, so the three card headings stay on one level once the
+     narrowest card is wide enough to wrap the longest tag ("Student & parent · own
+     record only") but not wide enough for a third column of text. */
+  .cs-card .cs-tag { min-height: 35px; }
   .cs-cta { grid-template-columns: 1.3fr 1fr; align-items: center; gap: 32px; padding: 38px; }
   .cs-cta-actions { justify-content: flex-end; }
 }
