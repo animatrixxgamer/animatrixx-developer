@@ -61,6 +61,26 @@ python3 -m http.server 3000
 for the site. If this moves to a custom domain or to Vercel as the primary host, update those two
 lines together so search engines and shared links agree.
 
+### Serving it from your own domain
+
+1. **DNS at the registrar.** Point `www` at `animatrixxgamer.github.io` with a CNAME, and the bare
+domain at GitHub's four A records: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`,
+`185.199.111.153`.
+2. **CNAME file.** Commit a file named `CNAME` at the repository root holding just the bare domain
+(`example.com` — no protocol, no `www`, no trailing slash, one line). Pages reads it to know which
+domain it serves, so it has to stay in the repo.
+3. **Settings → Pages.** Enter the same bare domain there, save, wait for the certificate to be
+issued, then tick **Enforce HTTPS**.
+4. **The canonical pair.** Change `<link rel="canonical">` and `<meta property="og:url">` in
+`index.html` to the new origin in the same commit. A canonical still pointing at the Pages URL tells
+search engines the custom domain is a duplicate, and `og:url` keeps shared links aimed at the old
+address.
+
+Pages then redirects the old `animatrixxgamer.github.io/animatrixx-developer/` address to the custom
+domain on its own. A second domain you also own needs its own 301 redirect at the registrar — don't
+add it to Pages as an alias, or the site answers on two addresses with one canonical. The social card
+is already host-relative (`/og-image.png`), so previews follow the new domain without a change.
+
 ## Notes
 
 `positioning.md` is working notes, not site content. It is gitignored and exists only in local
